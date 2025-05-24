@@ -1,0 +1,5 @@
+git init
+git remote add origin https://github.com/tu-usuario/ProyectoXML.git
+git add .
+git commit -m "Subida inicial"
+git push -u origin main
