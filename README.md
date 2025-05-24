@@ -8,3 +8,4 @@
 | ejercicio5  | [Ex5a.xml](XML/Ex5a.xml)     |
 | ejercicio6  | [Ex6.xml](XML/Ex6.xml)       |
 | ejercicio7  | [Ex7.txt](XML/Ex7.txt)       |
+| Pagina Web  | [click aqui](https://irakly1982.github.io/ProyectoXML/)|
