@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE test [
+  <!ELEMENT test (question+)>
+  <!ELEMENT question (wording,choices)>
+  <!ELEMENT wording (#PCDATA)>
+  <!ELEMENT choices (choice+)>
+  <!ELEMENT choice (#PCDATA)>
+  <!ATTLIST question id CDATA #REQUIRED>
+  <!ATTLIST choice correct (yes|no) "no">
+]>
+<test>
+  <question id="1">
+    <wording>¿En qué consola debutó Super Mario?</wording>
+    <choices>
+      <choice correct="yes">Nintendo Entertainment System</choice>
+      <choice>PlayStation</choice>
+      <choice>Sega Genesis</choice>
+      <choice>Game Boy</choice>
+    </choices>
+  </question>
+  <question id="2">
+    <wording>¿Quién es el protagonista de la saga Halo?</wording>
+    <choices>
+      <choice>Marcus Fenix</choice>
+      <choice correct="yes">Master Chief</choice>
+      <choice>Samus Aran</choice>
+      <choice>Link</choice>
+    </choices>
+  </question>
+  <question id="3">
+    <wording>¿En qué juego aparece el personaje Kratos?</wording>
+    <choices>
+      <choice correct="yes">God of War</choice>
+      <choice>Devil May Cry</choice>
+      <choice>The Witcher</choice>
+      <choice>Assassin's Creed</choice>
+    </choices>
+  </question>
+  <question id="4">
+    <wording>¿Qué empresa desarrolló Minecraft?</wording>
+    <choices>
+      <choice correct="yes">Mojang</choice>
+      <choice>Valve</choice>
+      <choice>Epic Games</choice>
+      <choice>Ubisoft</choice>
+    </choices>
+  </question>
+  <question id="5">
+    <wording>¿Cuál es el objetivo principal en Pac-Man?</wording>
+    <choices>
+      <choice>Evitar los fantasmas indefinidamente</choice>
+      <choice correct="yes">Comer todos los puntos del laberinto</choice>
+      <choice>Capturar fantasmas</choice>
+      <choice>Recoger monedas</choice>
+    </choices>
+  </question>
+  <question id="6">
+    <wording>¿Cómo se llama el villano principal en la serie The Legend of Zelda?</wording>
+    <choices>
+      <choice>Bowser</choice>
+      <choice correct="yes">Ganon</choice>
+      <choice>Ridley</choice>
+      <choice>Sephiroth</choice>
+    </choices>
+  </question>
+  <question id="7">
+    <wording>¿Qué estudio desarrolló The Witcher 3?</wording>
+    <choices>
+      <choice>BioWare</choice>
+      <choice>Rockstar</choice>
+      <choice correct="yes">CD Projekt RED</choice>
+      <choice>Bungie</choice>
+    </choices>
+  </question>
+  <question id="8">
+    <wording>¿Cuál fue la primera consola de Sony?</wording>
+    <choices>
+      <choice>PlayStation 2</choice>
+      <choice correct="yes">PlayStation</choice>
+      <choice>PSP</choice>
+      <choice>PlayStation 3</choice>
+    </choices>
+  </question>
+  <question id="9">
+    <wording>¿En qué juego encuentras al personaje de Lara Croft?</wording>
+    <choices>
+      <choice correct="yes">Tomb Raider</choice>
+      <choice>Uncharted</choice>
+      <choice>Prince of Persia</choice>
+      <choice>Far Cry</choice>
+    </choices>
+  </question>
+  <question id="10">
+    <wording>¿Qué color tiene Sonic?</wording>
+    <choices>
+      <choice>Rojo</choice>
+      <choice correct="yes">Azul</choice>
+      <choice>Amarillo</choice>
+      <choice>Verde</choice>
+    </choices>
+  </question>
+  <question id="11">
+    <wording>¿En qué ciudad ficticia se desarrolla GTA: Vice City?</wording>
+    <choices>
+      <choice>Los Santos</choice>
+      <choice correct="yes">Vice City</choice>
+      <choice>Liberty City</choice>
+      <choice>San Fierro</choice>
+    </choices>
+  </question>
+  <question id="12">
+    <wording>¿Qué género es Tetris?</wording>
+    <choices>
+      <choice>Acción</choice>
+      <choice>Aventura</choice>
+      <choice correct="yes">Puzzle</choice>
+      <choice>RPG</choice>
+    </choices>
+  </question>
+  <question id="13">
+    <wording>¿Cuál de estos juegos es un battle royale?</wording>
+    <choices>
+      <choice correct="yes">Fortnite</choice>
+      <choice>Overwatch</choice>
+      <choice>StarCraft</choice>
+      <choice>League of Legends</choice>
+    </choices>
+  </question>
+  <question id="14">
+    <wording>¿Qué personaje usa una espada llamada Master Sword?</wording>
+    <choices>
+      <choice>Cloud</choice>
+      <choice>Geralt</choice>
+      <choice correct="yes">Link</choice>
+      <choice>Marston</choice>
+    </choices>
+  </question>
+  <question id="15">
+    <wording>¿Cuál de estos juegos es exclusivo de PlayStation?</wording>
+    <choices>
+      <choice correct="yes">The Last of Us</choice>
+      <choice>Halo</choice>
+      <choice>Forza</choice>
+      <choice>Gears of War</choice>
+    </choices>
+  </question>
+  <question id="16">
+    <wording>¿Qué franquicia presenta a un cazador de monstruos?</wording>
+    <choices>
+      <choice>Pokémon</choice>
+      <choice correct="yes">Monster Hunter</choice>
+      <choice>Final Fantasy</choice>
+      <choice>Bayonetta</choice>
+    </choices>
+  </question>
+  <question id="17">
+    <wording>¿Qué juego popularizó el género sandbox en 3D?</wording>
+    <choices>
+      <choice>Roblox</choice>
+      <choice correct="yes">Minecraft</choice>
+      <choice>Terraria</choice>
+      <choice>Second Life</choice>
+    </choices>
+  </question>
+  <question id="18">
+    <wording>¿Quién es el creador de Metal Gear Solid?</wording>
+    <choices>
+      <choice correct="yes">Hideo Kojima</choice>
+      <choice>Shigeru Miyamoto</choice>
+      <choice>Ken Levine</choice>
+      <choice>Hideki Kamiya</choice>
+    </choices>
+  </question>
+  <question id="19">
+    <wording>¿En qué consola se lanzó inicialmente Breath of the Wild?</wording>
+    <choices>
+      <choice>Wii</choice>
+      <choice>3DS</choice>
+      <choice correct="yes">Nintendo Switch</choice>
+      <choice>GameCube</choice>
+    </choices>
+  </question>
+  <question id="20">
+    <wording>¿Cuál es el nombre del fontanero hermano de Mario?</wording>
+    <choices>
+      <choice correct="yes">Luigi</choice>
+      <choice>Toad</choice>
+      <choice>Wario</choice>
+      <choice>Yoshi</choice>
+    </choices>
+  </question>
+</test>

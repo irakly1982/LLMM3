@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Concurso XML</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+  <h1>Concurso de Preguntas</h1>
+
+  <label for="lang">Idioma:</label>
+  <select id="lang" onchange="cambiarIdioma()">
+    <option value="es">Español</option>
+    <option value="en">English</option>
+  </select>
+
+  <div id="timer">Tiempo: 0 segundos</div>
+
+  <div id="quiz-container"></div>
+  <button onclick="siguientePregunta()">Siguiente</button>
+  <div id="resultado"></div>
+  <button id="reiniciar" onclick="reiniciarTest()" style="display: none;">Volver a empezar</button>
+
+
+<script>
+let preguntas;
+let indice = 0;
+let puntaje = 0;
+let tiempo = 0;
+let intervalo;
+let idioma = 'es';
+
+function iniciarTemporizador() {
+  clearInterval(intervalo);
+  intervalo = setInterval(() => {
+    tiempo++;
+    document.getElementById('timer').innerText = `⏱ Tiempo: ${tiempo} segundos`;
+  }, 1000);
+}
+
+function cambiarIdioma() {
+  idioma = document.getElementById("lang").value;
+  cargarXML(idioma, false);
+}
+
+function cargarXML(idioma, reiniciar = true) {
+  fetch(`preguntas_${idioma}.xml`)
+    .then(res => res.text())
+    .then(str => (new DOMParser()).parseFromString(str, "text/xml"))
+    .then(data => {
+      preguntas = data.getElementsByTagName("question");
+      if (reiniciar) {
+        indice = 0;
+        puntaje = 0;
+        tiempo = 0;
+        iniciarTemporizador();
+      }
+      mostrarPregunta();
+    });
+}
+
+function mostrarPregunta() {
+  if (indice >= preguntas.length) {
+    clearInterval(intervalo);
+    document.getElementById("quiz-container").innerHTML = "";
+    document.getElementById("resultado").innerHTML = `
+      <div class="box">
+        <h2>Resultado final</h2>
+        <p>✅ Aciertos: ${puntaje} de ${preguntas.length}</p>
+        <p>⏱ Tiempo total: ${tiempo} segundos</p>
+      </div>
+    `;
+    document.querySelector("button[onclick='siguientePregunta()']").style.display = "none";
+    document.getElementById("reiniciar").style.display = "inline-block";
+    return;
+  }
+
+  const q = preguntas[indice];
+  const wording = q.getElementsByTagName("wording")[0].textContent;
+  const choices = q.getElementsByTagName("choice");
+
+  let html = `<div class="box"><h3>${wording}</h3>`;
+  for (let i = 0; i < choices.length; i++) {
+    const texto = choices[i].textContent;
+    const correcta = choices[i].getAttribute("correct") === "yes";
+    html += `<div class="choice">
+               <label>
+                 <input type="radio" name="choice" value="${correcta}"> ${texto}
+               </label>
+             </div>`;
+  }
+  html += `</div>`;
+  document.getElementById("quiz-container").innerHTML = html;
+  document.getElementById("resultado").innerHTML = "";
+  document.querySelector("button[onclick='siguientePregunta()']").style.display = "inline-block";
+  document.getElementById("reiniciar").style.display = "none";
+}
+
+function siguientePregunta() {
+  const seleccion = document.querySelector('input[name="choice"]:checked');
+  if (!seleccion) {
+    alert("Por favor, selecciona una respuesta.");
+    return;
+  }
+
+  if (seleccion.value === "true") {
+    puntaje++;
+  }
+
+  indice++;
+  mostrarPregunta();
+}
+
+function reiniciarTest() {
+  indice = 0;
+  puntaje = 0;
+  tiempo = 0;
+  cargarXML(idioma, true);
+}
+
+cargarXML(idioma, true);
+iniciarTemporizador();
+</script>
+
+
+
+</body>
+</html>
