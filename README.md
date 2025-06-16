@@ -13,6 +13,6 @@
 
 | Ejercicio   | Enlace al archivo      |
 |-------------|------------------------|
-| ejercicio1  | [xmldom1l]([XMLDOM/xmldom1.js](https://github.com/irakly1982/LLMM3/blob/2bd938fe26ce703caffee420176ab36d14144089/XML%20DOM/xmldom1.js)) |
-| ejercicio2  | [xmldom2.xml]([XMLDOM/xmldom2.js](https://github.com/irakly1982/LLMM3/blob/2bd938fe26ce703caffee420176ab36d14144089/XML%20DOM/xmldom2.js))       |
-| ejercicio3  | [xmldom3.xml]([XMLDOM/xmldom3.js](https://github.com/irakly1982/LLMM3/blob/2bd938fe26ce703caffee420176ab36d14144089/XML%20DOM/xmldom3.js))       |
+| ejercicio1  | [xmldom1l](XML_DOM/xmldom1.js) |
+| ejercicio2  | [xmldom2.xml](XML_DOM/xmldom2.js)       |
+| ejercicio3  | [xmldom3.xml](XML_DOM/xmldom3.js)       |
