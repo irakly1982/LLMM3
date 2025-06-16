@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h2>NASA APOD (Astronomy Picture of the Day)</h2>
+    <p id="demo"></p>
+    <img id="nasaImage" width="500" alt="NASA Photo of the Day" />
+
+    <script>
+      const xhttp = new XMLHttpRequest();
+      xhttp.onload = function () {
+        const myObj = JSON.parse(this.responseText);
+
+        // 1. Muestra "explanation"
+        let explanation = myObj.explanation;
+
+        // 2. Muestra "date"
+        let date = myObj.date;
+
+        // 3. Muestra "url"
+        let imageUrl = myObj.url;
+
+        // 4. Mostrar en HTML
+        document.getElementById("demo").innerHTML =
+          "<b>Fecha:</b> " + date + "<br><b>Explicación:</b> " + explanation;
+        document.getElementById("nasaImage").src = imageUrl;
+      };
+      xhttp.open(
+        "GET",
+        "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=2020-05-01"
+      );
+      xhttp.send();
+    </script>
+  </body>
+</html>
