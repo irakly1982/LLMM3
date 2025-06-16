@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Lectura de RSS con AJAX</title>
+  </head>
+  <body>
+    <h2>Últimas noticias - BBC</h2>
+    <div id="rss-feed"></div>
+
+    <script>
+      const xhttp = new XMLHttpRequest();
+      xhttp.onload = function () {
+        const xmlDoc = this.responseXML;
+        const items = xmlDoc.getElementsByTagName("item");
+        let html = "<ul>";
+
+        // Mostrar los primeros 5 titulares
+        for (let i = 0; i < Math.min(5, items.length); i++) {
+          const title = items[i].getElementsByTagName("title")[0].textContent;
+          const link = items[i].getElementsByTagName("link")[0].textContent;
+          html += `<li><a href="${link}" target="_blank">${title}</a></li>`;
+        }
+
+        html += "</ul>";
+        document.getElementById("rss-feed").innerHTML = html;
+      };
+
+      // RSS público con proxy CORS para evitar errores
+      xhttp.open(
+        "GET",
+        "https://api.allorigins.win/raw?url=https://feeds.bbci.co.uk/news/rss.xml",
+        true
+      );
+      xhttp.send();
+    </script>
+  </body>
+</html>
