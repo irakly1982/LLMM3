@@ -16,3 +16,17 @@
 | ejercicio1  | [xmldom1l](XML_DOM/xmldom1.js) |
 | ejercicio2  | [xmldom2.xml](XML_DOM/xmldom2.js)       |
 | ejercicio3  | [xmldom3.xml](XML_DOM/xmldom3.js)       |
+
+
+| Ejercicio   | Enlace al archivo      |
+|-------------|------------------------|
+| ejercicio1  | [ajax1](ajax+json/ajax1.html) |
+| ejercicio2  | [ajax2](ajax+json/ajax2.js)       |
+| ejercicio3  | [json1](ajax+json/json3.js)       |
+| ejercicio4  | [json2](ajax+json/json4.js)       |
+| ejercicio5  | [json3](ajax+json/json5.html)     |
+
+
+| Ejercicio   | Enlace al archivo      |
+|-------------|------------------------|
+| ejercicio1  | [rss](rss/rss.html) |
